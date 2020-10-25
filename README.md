@@ -69,3 +69,49 @@ Teamとは、複数人でアプリ開発するための仕組み。権限に応�
 個人開発の場合特に気にしなくてもいいが、Teamを作成し設定しなければならない。
 
 [Project]を選択->[TARGETS]を選択->[Signing&Capabilities]->[Team]で登録したアカウントがプルダウンに表示される。
+
+### 画像の追加方法
+[Assets.xcassets]を選択した状態で、ドラッグ＆ドロップすると画像が追加できる。
+
+※ちなみに、[Assets.xcassets]は画像を管理するためのフォルダ。
+
+### AutoLayoutの5つのボタンの役割（左から順）
+- Update Frames（ぐるりん）
+  - AutoLayoutの値と実際の表示差異を解消する
+- Align（揃え）
+  - パーツを中央や左揃えなどに配置したりする制約を設定
+- Add New Constraints（四角）
+  - パーツの高さや横幅、余白などの制約を設定
+  - [Constrain to margins]のチェックを外せば、画面の余白を考慮せず入力値がそのまま余白になる。
+    - チェックを入れていれば、デフォルトで20pxの余白が確保される。
+- Resolve Auto Layout Issues（三角）
+  - 不足している制約を自動的に設定したり、パーツを制約通りに表示する機能などがある
+- Embed in Stack
+  - パーツにまとめて制約を設定する場合に利用する
+
+### SafeArea
+iOS11 + Xcode9から[SafeArea]というレイアウトガイドが導入された。
+
+切り掛け部分にレイアウトが重なると、見切れてしまう可能性があるため、どの機種でも正しく表示されるようにSafeArea内でUIパーツを配置する必要がある。
+
+AutoLayoutを使うと、SafeArea内に配置されるので安心！
+
+### IBOutletとは
+『Interface Builder Outlet』の略称。
+
+『Interface Builder』は、XcodeのなかでUIを設計するツールの名称。
+
+『Outlet』にはコンセントや差込口のような意味がある。
+
+**@IBOutletは、Interface Builderにあるパーツとコードを連結する事を示す**キーワードのこと。
+
+### IBActionとは
+『Interface Builder Action』の略称。
+
+**@IBActionは、Interface Builderにあるパーツでユーザによって何かのアクションが行われたときに実行するプログラムを連結するため**のキーワードのこと。
+
+
+## こんな時は
+### Assistantを開いても、ViewControllerが表示されない。
+何かの手違いでViewControllerが開かないようになっていた場合は、上部にあるベン図[Top Level Objects]みたいなところでViewControllerを選択すると解決する。
+
