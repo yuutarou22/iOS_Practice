@@ -110,8 +110,68 @@ AutoLayoutを使うと、SafeArea内に配置されるので安心！
 
 **@IBActionは、Interface Builderにあるパーツでユーザによって何かのアクションが行われたときに実行するプログラムを連結するため**のキーワードのこと。
 
+### Bundleとは
+iOSでの[Bundle]クラスは、ファイルや画像を管理してくれるクラス。
 
-## こんな時は
+取り込んだ音源などのファイル名を指定し、ファイルの場所を指定することで取得できる。
+
+```swift
+let cymbalPath = Bundle.main.bundleURL.appendingPathComponent("cymbal.mp3")
+```
+
+### do-try-catchの書き方
+Swiftでは、エラーが発生する可能性のあるクラスを使用する場合、エラーが表示される。
+
+ > Call can throw, but it is not marked with 'try' and the error is not handled
+
+例えば、AVAudioPlayerは、音源のファイルURLを間違えていると音が鳴らない。参照できない。
+
+このような正常でない場合、アプリが落ちたりしてしまうので、例外処理として書く。
+
+```swift
+do {
+  cymbalPlayer = try AVAudioPlayer(contentsOf: cymbalPath, fileTypeHint: nil)
+} catch {
+  print("シンバルエラー！")
+}
+```
+
+参考：https://code-schools.com/swift-error-handler/
+
+### Segueで画面遷移を設定する
+- StoryboardでViewControllerを追加する
+- ViewControllerファイルを追加
+- Storyboardに追加したViewControllerのCustomClassに、追加したViewControllerを選択して紐付ける
+
+参考：https://i-app-tec.com/ios/tap_gesture.html
+
+参考：https://ja.stackoverflow.com/questions/4248/storyboard%E3%81%AEcustom-class%E3%81%AB%E8%87%AA%E4%BD%9C%E3%81%AE%E3%82%AF%E3%83%A9%E3%82%B9%E3%81%8C%E8%A1%A8%E7%A4%BA%E3%81%95%E3%82%8C%E3%81%AA%E3%81%84
+
+### プレビュー機能
+[ViewController]と[Storyboard]を紐づけるときに[assistant]を使うけど、その下にある[Preview]を使えば同時に複数端末のイメージ画面を確認することができる。
+
+参考：https://pg-happy.jp/xcode-simulator-preview.html
+
+## こんな時は（トラブルシューティング）
 ### Assistantを開いても、ViewControllerが表示されない。
 何かの手違いでViewControllerが開かないようになっていた場合は、上部にあるベン図[Top Level Objects]みたいなところでViewControllerを選択すると解決する。
 
+### Xcodeの予測候補（入力補完）が表示されない。
+- メニューバーの Xcode > Preferences > Text Editingへ移動する
+- [Suggest completion while typing]のチェックマークを外す
+- [Quit Xcode]で一度Xcodeを終了し、もう一度起動する
+- 再度メニューバーのXcode > Preferences > Text Editingへ移動する
+- [Suggest completion while typing]にチェックを入れる
+
+参考：https://orangelog.site/miscellaneous/xcode-autocomplete-method/
+
+### コンテンツを追加したら、エラーが起きてビルドできない。
+[Multiple commands produce '/Users/ユーザ名/...省略.../Info.plist']みたいなのだったら、
+
+Runner > Build Phases > Copy Bundle Resources
+
+Copy Bundle Resourcesに記載されているInfo.plistを削除する。
+
+僕の場合は同じリソースの参照が2つあり、重複してしまっていた。
+
+参考：https://qiita.com/121a/items/b0b5ee053059e199bef4
