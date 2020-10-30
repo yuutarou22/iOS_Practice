@@ -141,6 +141,15 @@ do {
 
 参考：https://code-schools.com/swift-error-handler/
 
+### Delegateとは
+Delegateは、あるクラスで行いたい処理の一部を他のクラスに任せたり、任せた処理を指定したクラスに通知したりする仕組み。
+
+- 処理を依頼するクラス（ViewController）
+- 依頼する、依頼されるクラスを取り持つプロトコル（UITextFieldDelegate）
+- 処理が依頼されるクラス（UITextField）
+
+
+
 ### **Segueで画面遷移を設定する**
 - StoryboardでViewControllerを追加する
 - ViewControllerファイルを追加
