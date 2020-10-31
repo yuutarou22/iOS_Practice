@@ -8,3 +8,6 @@ jobs:
       - uses: technote-space/toc-generator@v2
         with:
           FOLDING: ${{ env.TOC_FOLDING }}
+      - uses: technote-space/toc-generator@gh-actions
+        with:
+          FOLDING: true
