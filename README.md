@@ -3,8 +3,7 @@ iOSアプリ開発に慣れる。
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-<details>
-<summary>Table of Contents</summary>
+**Table of Contents**
 
 - [参考元](#%E5%8F%82%E8%80%83%E5%85%83)
 - [**iOSで最低限知ってお項目**](#ios%E3%81%A7%E6%9C%80%E4%BD%8E%E9%99%90%E7%9F%A5%E3%81%A3%E3%81%A6%E3%81%8A%E9%A0%85%E7%9B%AE)
@@ -37,7 +36,6 @@ iOSアプリ開発に慣れる。
   - [Xcodeの予測候補（入力補完）が表示されない。](#xcode%E3%81%AE%E4%BA%88%E6%B8%AC%E5%80%99%E8%A3%9C%E5%85%A5%E5%8A%9B%E8%A3%9C%E5%AE%8C%E3%81%8C%E8%A1%A8%E7%A4%BA%E3%81%95%E3%82%8C%E3%81%AA%E3%81%84)
   - [コンテンツを追加したら、エラーが起きてビルドできない。](#%E3%82%B3%E3%83%B3%E3%83%86%E3%83%B3%E3%83%84%E3%82%92%E8%BF%BD%E5%8A%A0%E3%81%97%E3%81%9F%E3%82%89%E3%82%A8%E3%83%A9%E3%83%BC%E3%81%8C%E8%B5%B7%E3%81%8D%E3%81%A6%E3%83%93%E3%83%AB%E3%83%89%E3%81%A7%E3%81%8D%E3%81%AA%E3%81%84)
 
-</details>
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## 参考元
