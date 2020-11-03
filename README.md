@@ -259,11 +259,86 @@ ViewControllerの移動先を設定できる。
 
 参考：https://pg-happy.jp/xcode-simulator-preview.html
 
+### Timer クラス
+指定した時間になんらかの処理を実行したり、定期的に繰り返し処理を実行することが可能になる。
+
+クイズゲームの制限時間などに応用できる。
+
+```swift
+var timer : Timer?
+```
+
+### UserDefault とは
+アプリを停止して再起動した時、UserDefaultを利用して保存していた値を利用する。
+
+AndroidでいうSharedPreferencesのようなもの。
+
+データを保存して復元できることを「永続化」と呼ぶ。
+
+キーと値を指定することで、キーを使って値を取得したり記録することが可能。
+
+```swift
+// 設定値を扱うキーを設定
+let settingKey = "timer_value"
+
+// UserDefaultsのインスタンス生成
+let settings = UserDefaults.standard
+
+// UserDefaultsに初期値を設定
+settings.register(defaults: [settingKey:10])
+```
+
+### メソッドの定義方法
+①以下は、引数が1つ、戻り値がInt型のメソッド。
+
+```swift
+func addFunction(num: Int) -> Int {
+  return num + 10
+}
+```
+
+②引数が複数あるメソッドを呼び出す場合、2つ目以降はラベルが必要になる。
+
+```swift
+func sumFunction(num1: Int, num2: Int) -> Int {
+  return num1 + num2
+}
+
+sumFunction(10, num2: 20) // -> 30
+```
+
+③ラベルを書くのがめんどい時は、「_」で省略可能。
+
+```swift
+func subFunction(num1: Int, _ num2: Int) -> Int {
+  return num1 + num2
+}
+
+sumFunction(100, 20) // -> 80
+```
+
+### 「@objc」とは
+
+タイマー開始処理である「scheduledTimer」の引数「#selector」で指定する際に必要になる。
+
+※Objective-Cでは、メソッドの頭に「#」をつける
+
+Timerクラスは、Objective-Cで書かれたクラスのため、Objective-CからSwift4以降のクラスを参照する場合は「@objc」と明示的に記述する必要がある。
+
+
+
+
+
 ---
 
 ## **こんな時は（トラブルシューティング）**
 ### Assistant を開いても、ViewControllerが表示されない。
 何かの手違いでViewControllerが開かないようになっていた場合は、上部にあるベン図[Top Level Objects]みたいなところでViewControllerを選択すると解決する。
+
+### Xcodeが提供しているメソッドやクラスを使う時に、どんな引数を設定すれば良いか調べる
+
+1. メソッド名にカーソルをあて、「option」キーを押すと「？」マークが表示される
+2. 「？」をクリックすると、引数を調べることが可能
 
 ### Xcodeの予測候補（入力補完）が表示されない。
 - メニューバーの Xcode > Preferences > Text Editingへ移動する
