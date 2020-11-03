@@ -3,8 +3,7 @@ iOSアプリ開発に慣れる。
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-<details>
-<summary>Table of Contents</summary>
+**Table of Contents**
 
 - [参考元](#%E5%8F%82%E8%80%83%E5%85%83)
 - [**iOSで最低限知ってお項目**](#ios%E3%81%A7%E6%9C%80%E4%BD%8E%E9%99%90%E7%9F%A5%E3%81%A3%E3%81%A6%E3%81%8A%E9%A0%85%E7%9B%AE)
@@ -32,12 +31,16 @@ iOSアプリ開発に慣れる。
   - [Segue とは](#segue-%E3%81%A8%E3%81%AF)
   - [Segue で画面遷移を設定する](#segue-%E3%81%A7%E7%94%BB%E9%9D%A2%E9%81%B7%E7%A7%BB%E3%82%92%E8%A8%AD%E5%AE%9A%E3%81%99%E3%82%8B)
   - [プレビュー機能](#%E3%83%97%E3%83%AC%E3%83%93%E3%83%A5%E3%83%BC%E6%A9%9F%E8%83%BD)
+  - [Timer クラス](#timer-%E3%82%AF%E3%83%A9%E3%82%B9)
+  - [UserDefault とは](#userdefault-%E3%81%A8%E3%81%AF)
+  - [メソッドの定義方法](#%E3%83%A1%E3%82%BD%E3%83%83%E3%83%89%E3%81%AE%E5%AE%9A%E7%BE%A9%E6%96%B9%E6%B3%95)
+  - [「@objc」とは](#objc%E3%81%A8%E3%81%AF)
 - [**こんな時は（トラブルシューティング）**](#%E3%81%93%E3%82%93%E3%81%AA%E6%99%82%E3%81%AF%E3%83%88%E3%83%A9%E3%83%96%E3%83%AB%E3%82%B7%E3%83%A5%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0)
   - [Assistant を開いても、ViewControllerが表示されない。](#assistant-%E3%82%92%E9%96%8B%E3%81%84%E3%81%A6%E3%82%82viewcontroller%E3%81%8C%E8%A1%A8%E7%A4%BA%E3%81%95%E3%82%8C%E3%81%AA%E3%81%84)
+  - [Xcodeが提供しているメソッドやクラスを使う時に、どんな引数を設定すれば良いか調べる](#xcode%E3%81%8C%E6%8F%90%E4%BE%9B%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E3%83%A1%E3%82%BD%E3%83%83%E3%83%89%E3%82%84%E3%82%AF%E3%83%A9%E3%82%B9%E3%82%92%E4%BD%BF%E3%81%86%E6%99%82%E3%81%AB%E3%81%A9%E3%82%93%E3%81%AA%E5%BC%95%E6%95%B0%E3%82%92%E8%A8%AD%E5%AE%9A%E3%81%99%E3%82%8C%E3%81%B0%E8%89%AF%E3%81%84%E3%81%8B%E8%AA%BF%E3%81%B9%E3%82%8B)
   - [Xcodeの予測候補（入力補完）が表示されない。](#xcode%E3%81%AE%E4%BA%88%E6%B8%AC%E5%80%99%E8%A3%9C%E5%85%A5%E5%8A%9B%E8%A3%9C%E5%AE%8C%E3%81%8C%E8%A1%A8%E7%A4%BA%E3%81%95%E3%82%8C%E3%81%AA%E3%81%84)
   - [コンテンツを追加したら、エラーが起きてビルドできない。](#%E3%82%B3%E3%83%B3%E3%83%86%E3%83%B3%E3%83%84%E3%82%92%E8%BF%BD%E5%8A%A0%E3%81%97%E3%81%9F%E3%82%89%E3%82%A8%E3%83%A9%E3%83%BC%E3%81%8C%E8%B5%B7%E3%81%8D%E3%81%A6%E3%83%93%E3%83%AB%E3%83%89%E3%81%A7%E3%81%8D%E3%81%AA%E3%81%84)
 
-</details>
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## 参考元
