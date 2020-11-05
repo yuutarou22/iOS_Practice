@@ -330,8 +330,44 @@ sumFunction(100, 20) // -> 80
 
 Timerクラスは、Objective-Cで書かれたクラスのため、Objective-CからSwift4以降のクラスを参照する場合は「@objc」と明示的に記述する必要がある。
 
+### Swift（ソースコード）上で画面遷移を実装する方法
 
+1. Storyboardを開く
+2. Segue（矢印）を選択した状態にする
+3. IdentifierにIDを設定する
+4. 下記のコードを書く
 
+```swift
+performSegue(withIdentifier: "goSetting", sender: nil)
+```
+
+### 「_」に代入するのは？
+```swift
+_ = displayUpdate()
+```
+displayUpdateメソッドが戻り値を返しても、特に使う場面がない想定。
+
+そこで何も使わない変数があると警告を出すので、受け皿的な立ち位置で「_」を使う。
+
+### for文
+```swift
+/// 構文
+for 変数 in 開始値...終了値 {
+
+}
+
+/// 例
+for row in 0..<settingArray.count {
+  if settingArray[row] == timerValue {
+    //~~~~処理~~~~
+  }
+}
+```
+
+### PickerView の DataSource とは
+DataSourceを使うことで、UIパーツとデータのやりとりを行うことが可能。
+
+`numberOfComponents`、`pickerView`の２つを使うことで行列の数を設定することができる。
 
 
 ---
